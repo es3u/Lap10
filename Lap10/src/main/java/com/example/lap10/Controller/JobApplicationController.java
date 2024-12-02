@@ -30,7 +30,8 @@ public class JobApplicationController {
         }
         return ResponseEntity.badRequest().body("Apply Failed , check user id OR Jop Post id");
     }
-
+    
+        @PostMapping("/deleteJobApplication/{id}")
     public ResponseEntity deleteJobApplication(@PathVariable Integer id){
         Boolean isDeleted = jobApplicationService.deleteJobApplication(id);
         if(isDeleted){
